@@ -18,7 +18,7 @@ const MoviesList = ({ onSelectMovie }) => {
         {movies.map(movie => (
           <li key={movie.show.id}>
             <div className='each-movie'>
-              <img src={movie.show.image && movie.show.image.medium} alt={movie.show.name} />
+ {movie.show.image ?<img src={movie.show.image && movie.show.image.medium} alt={movie.show.name} /> : <p style={{height: "281px"}}>Image not available </p>}
               <h4>{movie.show.name}</h4>
               <button className='movie-button' onClick={() => onSelectMovie(movie.show)}>View Details</button>
             </div>
